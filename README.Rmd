@@ -1,14 +1,3 @@
----
-title: "DBopen - Query the DB-Open-Data timatable API"
-author: "Philipp Ottolinger"
-date: "4 Mai 2016"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 R package that provides access to the DB-Open-Data timetable API.
 
 Authentication key required.
