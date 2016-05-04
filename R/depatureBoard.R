@@ -1,7 +1,25 @@
+#' Fetch a departure board
+#'
+#' Fetch a departure board from the DB-Open-Data timetable API and corresponding references.
+#'
+#' @param stopID character, \code{stopID} found with \code{getStopID}.
+#' @param date character, set the date to fetch a departure board for in \code{"YYYY-MM-DD"} format. Default uses \code{Sys.time()}.
+#' @param time character, set the earliest departure time in \code{"HH:MM"} format. Default uses \code{Sys.time()}.
+#' @param authKey character, authentication key for the DB-Open-Data timetable API.
+#' @param refs logical, if \code{TRUE} additional references will be fetched. Default is \code{FALSE}.
+#' @author Philipp Ottolinger
+#' @return A data.frame if \code{refs = FALSE} or a list if {refs = TRUE}.
+#' @details \code{departureBoard()} will fetch a departure board for a given \code{date} containing the next 20 departures from a certain station (\code{stopID}) beginning from the given \code{time}. Additionally further train-specific references can be fetched with \code{refs = TRUE}. These can be used with \code{journeyDetails()}.
 #' @import dplyr
 #' @import RJSONIO
 #' @import magrittr
+#' @export departureBoard
 departureBoard <- function(stopID = "008011160", date = substr(Sys.time() + 1800, 1, 10), time = substr(Sys.time() + 1800, 12, 16), authKey, refs = FALSE) {
+  . <- NULL
+  direction <- NULL
+  name <- NULL
+  track <- NULL
+  JourneyDetailRef <- NULL
   time %<>% gsub(":","%3a",.)
   api_url <- paste("http://open-api.bahn.de/bin/rest.exe/departureBoard?authKey=",authKey,"&lang=de&id=",stopID,"&date=",date,"&time=",time,"&format=json", sep="")
   json <- api_url %>% fromJSON()
@@ -14,7 +32,8 @@ departureBoard <- function(stopID = "008011160", date = substr(Sys.time() + 1800
                     date = sapply(json, "[[", "date") %>% as.character() %>% unlist(),
                     direction = sapply(json, "[[", "direction") %>% as.character() %>% unlist(),
                     track = sapply(json, "[[", "track") %>% as.character() %>% unlist(),
-                    JourneyDetailRef = sapply(json, "[[", "JourneyDetailRef") %>% as.character() %>% unlist())
+                    JourneyDetailRef = sapply(json, "[[", "JourneyDetailRef") %>% as.character() %>% unlist(),
+                    stringsAsFactors = F)
   dep[dep == "NULL"] <- NA
   board <- dep %>%
     select(Date = date, From = stop, To = direction, Time = time, Train = name, Track = track)
