@@ -99,7 +99,7 @@ journeyDetails(ref = url)
 
 Since `journeyDetails()` includes coordinates and the succession of stops one can use `ggplot2` and `geom_path` to (roughly) plot a train's journey on a map:
 
-```{r, message = F}
+```{r, message = F, warnings = F, error = F}
 # Store journey details
 journey <- journeyDetails(ref = url)
 
