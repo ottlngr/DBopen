@@ -20,6 +20,12 @@ Get the \code{stopID} needed for the DB-Open-Data timetable API.
 \details{
 Because the timetable API cannot handle station names one has to fetch the respective \code{stopID} first. This \code{stopID} can be used to refer to a certain station.
 }
+\examples{
+\dontrun{
+getStopID(station = "Hamburg Hbf",
+          authKey = authKey)
+}
+}
 \author{
 Philipp Ottolinger
 }

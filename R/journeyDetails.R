@@ -2,16 +2,24 @@
 #'
 #' Get additional information on a specific train like the rooute, stops, arrival and departure times.
 #'
-#' @param refs data.frame, references table from \code{departureBoard(..., refs = TRUE)$departureBoardRef} or \code{arrivalBoard(..., refs = TRUE)$arrivalBoardRef}.
-#' @param Train character, train name as found in departure board or arrival board.
+#' @param ref, references URL from \code{departureBoard(..., refs = TRUE)$departureBoardRef} or \code{arrivalBoard(..., refs = TRUE)$arrivalBoardRef}.
 #' @author Philipp Ottolinger
-#' @details \code{journeyDetails()} lets you get further information on a specific train. It requires a table with reference URLs fetched with \code{departureBoard()} or \code{arrivalBoard()}. The function will choose the URL corresponding to the given train name (\code{Train}) and fetch the data from the API.
+#' @details \code{journeyDetails()} lets you get further information on a specific train. It requires a reference URL fetched with \code{departureBoard()} or \code{arrivalBoard()} and fetches the respective journey details from the API.
 #' @import RJSONIO
 #' @import dplyr
 #' @import magrittr
 #' @export journeyDetails
-journeyDetails <- function(refs, Train) {
-  ref_url<- refs[refs$Train == Train,]$Ref
+#' @examples
+#' \dontrun{
+#' dep <- departureBoard(stopID = "008002549",
+#'                       date = "2016-12-01",
+#'                       time = "08:00",
+#'                       authKey = authKey,
+#'                       refs = TRUE)
+#' journeyDetails(dep$departureBoardRef$Ref[1])
+#' }
+journeyDetails <- function(ref) {
+  ref_url <- ref
   journey <- ref_url %>%
     as.character() %>%
     fromJSON()

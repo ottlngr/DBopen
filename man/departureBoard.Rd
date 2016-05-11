@@ -27,6 +27,21 @@ Fetch a departure board from the DB-Open-Data timetable API and corresponding re
 \details{
 \code{departureBoard()} will fetch a departure board for a given \code{date} containing the next 20 departures from a certain station (\code{stopID}) beginning from the given \code{time}. Additionally further train-specific references can be fetched with \code{refs = TRUE}. These can be used with \code{journeyDetails()}.
 }
+\examples{
+\dontrun{
+departureBoard(stopID = "008002549",
+               date = "2016-12-01",
+               time = "08:00",
+               authKey = authKey)
+}
+\dontrun{
+departureBoard(stopID = "008002549",
+               date = "2016-12-01",
+               time = "08:00",
+               authKey = authKey,
+               refs = TRUE)
+}
+}
 \author{
 Philipp Ottolinger
 }

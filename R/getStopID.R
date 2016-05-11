@@ -10,6 +10,11 @@
 #' @import RJSONIO
 #' @import magrittr
 #' @export getStopID
+#' @examples
+#' \dontrun{
+#' getStopID(station = "Hamburg Hbf",
+#'           authKey = authKey)
+#' }
 getStopID <- function(station = "Berlin Hbf", authKey) {
   . <- NULL
   station %<>% gsub(" ", "+", .)

@@ -4,18 +4,26 @@
 \alias{journeyDetails}
 \title{Get details on a specific train}
 \usage{
-journeyDetails(refs, Train)
+journeyDetails(ref)
 }
 \arguments{
-\item{refs}{data.frame, references table from \code{departureBoard(..., refs = TRUE)$departureBoardRef} or \code{arrivalBoard(..., refs = TRUE)$arrivalBoardRef}.}
-
-\item{Train}{character, train name as found in departure board or arrival board.}
+\item{ref, }{references URL from \code{departureBoard(..., refs = TRUE)$departureBoardRef} or \code{arrivalBoard(..., refs = TRUE)$arrivalBoardRef}.}
 }
 \description{
 Get additional information on a specific train like the rooute, stops, arrival and departure times.
 }
 \details{
-\code{journeyDetails()} lets you get further information on a specific train. It requires a table with reference URLs fetched with \code{departureBoard()} or \code{arrivalBoard()}. The function will choose the URL corresponding to the given train name (\code{Train}) and fetch the data from the API.
+\code{journeyDetails()} lets you get further information on a specific train. It requires a reference URL fetched with \code{departureBoard()} or \code{arrivalBoard()} and fetches the respective journey details from the API.
+}
+\examples{
+\dontrun{
+dep <- departureBoard(stopID = "008002549",
+                      date = "2016-12-01",
+                      time = "08:00",
+                      authKey = authKey,
+                      refs = TRUE)
+journeyDetails(dep$departureBoardRef$Ref[1])
+}
 }
 \author{
 Philipp Ottolinger

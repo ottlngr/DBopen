@@ -14,6 +14,19 @@
 #' @import RJSONIO
 #' @import magrittr
 #' @export arrivalBoard
+#' @examples
+#' \dontrun{
+#' arrivalBoard(stopID = "008002549",
+#'              date = "2016-12-01",
+#'              time = "18:00",
+#'              authKey = authKey)
+#' }
+#' \dontrun{
+#' arrivalBoard(stopID = "008002549",
+#'              date = "2016-12-01",
+#'              time = "18:00",
+#'              authKey = authKey,
+#'              refs = TRUE)}
 arrivalBoard <- function(stopID = "008011160", date = substr(Sys.time() + 1800, 1, 10), time = substr(Sys.time() + 1800, 12, 16), authKey, refs = FALSE) {
   . <- NULL
   name <- NULL
