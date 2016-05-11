@@ -13,6 +13,6 @@ devtools::install_github("DBopen/ottlngr")
 
 ## Example
 
-To see **`DBopen`** in action, please take a look at the [vignette](/vignettes/DBopen.Rmd).
+To see **`DBopen`** in action, please take a look at the [vignette](/vignettes/DBopen.html).
 
 
