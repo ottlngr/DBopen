@@ -8,7 +8,7 @@ You can install DBopen from github with:
 
 ```R
 # install.packages("devtools")
-devtools::install_github("DBopen/ottlngr")
+devtools::install_github("ottlngr/DBopen")
 ```
 
 ## Example
