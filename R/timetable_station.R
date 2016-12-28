@@ -1,3 +1,5 @@
+#' @importFrom jsonlite fromJSON
+
 timetable_station <- function(pattern, authkey, first = TRUE, lang = "de", format = "json") {
 
   # Check function arguments

@@ -1,3 +1,7 @@
+#' @importFrom jsonlite fromJSON
+#' @importFrom ggplot2 fortify
+#' @importFrom maptools readShapeSpatial
+
 # Stationsdaten
 # see http://data.deutschebahn.com/dataset/data-stationsdaten/resource/c96fb971-1d03-4798-9a58-f8d269f8ec7a
 
@@ -16,7 +20,7 @@ save(haltestellendaten, file = "./data/haltestellendaten.RData")
 # see http://data.deutschebahn.com/dataset/data-netzradar
 
 url <- "http://download-data.deutschebahn.com/static/datasets/netzradar/connectivity_2016_11.geojson"
-a <- fromJSON(url)
+a <- jsonlite::fromJSON(url)
 s <- seq_along(x$features$geometry$coordinates)
 s <- lapply(s, c)
 b <- mapply(FUN = function(x, y) cbind(x, y), x = s, y = a$features$geometry$coordinates)
@@ -34,9 +38,9 @@ tmp <- tempfile()
 download.file(url, tmp)
 tmpd <- tempdir()
 tmp2 <- unzip(tmp, exdir = tmpd)
-luftschadstoffkataster <- readShapeSpatial(tmp2[grepl(pattern = ".shp", x = tmp2)])
+luftschadstoffkataster <- maptools::readShapeSpatial(tmp2[grepl(pattern = ".shp", x = tmp2)])
 luftschadstoffkataster@data$id <- rownames(luftschadstoffkataster@data)
-luftschadstoffkataster.points <- fortify(luftschadstoffkataster)
+luftschadstoffkataster.points <- ggplot2::fortify(luftschadstoffkataster)
 luftschadstoffkataster <- merge(luftschadstoffkataster.points, luftschadstoffkataster@data, by="id")
 luftschadstoffkataster.points <- NULL
 save(luftschadstoffkataster, file = "./data/luftschadstoffkataster.RData")
