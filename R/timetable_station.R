@@ -1,4 +1,4 @@
-timetable_station_id <- function(pattern, authkey, first = TRUE, lang = "de", format = "json") {
+timetable_station <- function(pattern, authkey, first = TRUE, lang = "de", format = "json") {
 
   # Check function arguments
   if (missing(pattern)) { message("No search pattern supplied.") }
