@@ -1,15 +1,11 @@
-Package: DBopen
+Package: dbopen2
 Type: Package
-Title: Query the DB-Open-Data timetable API
+Title: What the Package Does (Title Case)
 Version: 0.1.0
-Authors@R: person("Philipp", "Ottolinger", email = "philipp@ottolinger.de", role = c("aut", "cre"))
-Maintainer: Philipp Ottolinger <philipp@ottolinger.de>
-Description: This package offers a few functions to query the DB-Open-Data timetable API. It offers functionality to fetch departure and arrival boards as well as fetching more detailed information on specific trains.
-License: GPL-3
-LazyData: TRUE
-RoxygenNote: 5.0.1
-Imports: dplyr, magrittr, RJSONIO
-Depends: R (>= 2.1.0)
-URL: https://github.com/ottlngr/DBopen
-Suggests: knitr, rmarkdown, ggplot2, ggmap
-VignetteBuilder: knitr
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true

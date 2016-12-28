@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Fetch an arrival board\n#'\n#' Fetch an arrival board from the DB-Open-Data timetable API and corresponding references.\n#'\n#' @param stopID character, \\code{stopID} found with \\code{getStopID}.\n#' @param date character, set the date to fetch an arrival board for in \\code{\"YYYY-MM-DD\"} format. Default uses \\code{Sys.time()}.\n#' @param time character, set the earliest arrival time in \\code{\"HH:MM\"} format. Default uses \\code{Sys.time()}.\n#' @param authKey character, authentication key for the DB-Open-Data timetable API.\n#' @param refs logical, if \\code{TRUE} additional references will be fetched. Default is \\code{FALSE}.\n#' @author Philipp Ottolinger\n#' @return A data.frame if \\code{refs = FALSE} or a list if {refs = TRUE}.\n#' @details \\code{arrivalBoard()} will fetch an arrival board for a given \\code{date} containing the next 20 arrivals at a certain station (\\code{stopID}) beginning from the given \\code{time}. Additionally further train-specific references can be fetched with \\code{refs = TRUE}. These can be used with \\code{journeyDetails()}.\n#' @import dplyr\n#' @import RJSONIO\n#' @import magrittr\n#' @export arrivalBoard\n#' @examples\n#' \\dontrun{\n#' arrivalBoard(stopID = \"008002549\",\n#'              date = \"2016-12-01\",\n#'              time = \"18:00\",\n#'              authKey = authKey)\n#' }\n#' \\dontrun{\n#' arrivalBoard(stopID = \"008002549\",\n#'              date = \"2016-12-01\",\n#'              time = \"18:00\",\n#'              authKey = authKey,\n#'              refs = TRUE)}\narrivalBoard <- function(stopID = \"008011160\", date = substr(Sys.time() + 1800, 1, 10), time = substr(Sys.time() + 1800, 12, 16), authKey, refs = FALSE) {\n  . <- NULL\n  name <- NULL\n  origin <- NULL\n  track <- NULL\n  JourneyDetailRef <- NULL\n  time %<>% gsub(\":\",\"%3a\",.)\n  api_url <- paste(\"http://open-api.bahn.de/bin/rest.exe/arrivalBoard?authKey=\",authKey,\"&lang=de&id=\",stopID,\"&date=\",date,\"&time=\",time,\"&format=json\", sep=\"\")\n  json <- api_url %>% fromJSON()\n  json <- json$ArrivalBoard$Arrival\n  arr <- data.frame(name = sapply(json, \"[[\", \"name\") %>% as.character() %>% unlist(),\n                    type = sapply(json, \"[[\", \"type\") %>% as.character() %>% unlist(),\n                    stopid = sapply(json, \"[[\", \"stopid\") %>% as.character() %>% unlist(),\n                    stop = sapply(json, \"[[\", \"stop\") %>% as.character() %>% unlist(),\n                    time = sapply(json, \"[[\", \"time\") %>% as.character() %>% unlist(),\n                    date = sapply(json, \"[[\", \"date\") %>% as.character() %>% unlist(),\n                    origin = sapply(json, \"[[\", \"origin\") %>% as.character() %>% unlist(),\n                    track = sapply(json, \"[[\", \"track\") %>% as.character() %>% unlist(),\n                    JourneyDetailRef = sapply(json, \"[[\", \"JourneyDetailRef\") %>% as.character() %>% unlist(),\n                    stringsAsFactors = F)\n  arr[arr == \"NULL\"] <- NA\n  board <- arr %>%\n    select(Date = date, Stop = stop, Train = name, From = origin, Time = time, Track = track)\n  if (refs == TRUE) {\n    refs <- arr %>%\n      select(Date = date, Time = time, Train = name, Ref = JourneyDetailRef)\n    return(list(arrivalBoard = board, arrivalBoardRef = refs))\n  } else {\n    return(board)\n  }\n}\n",
+    "created" : 1462353571873.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "252206740",
+    "id" : "33FCEA47",
+    "lastKnownWriteTime" : 1462909187,
+    "last_content_update" : 1462909187720,
+    "path" : "~/git/DBopen/R/arrivalBoard.R",
+    "project_path" : "R/arrivalBoard.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

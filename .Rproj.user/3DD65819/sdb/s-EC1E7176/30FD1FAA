@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: DBopen\nType: Package\nTitle: Query the DB-Open-Data timetable API\nVersion: 0.1.0\nAuthors@R: person(\"Philipp\", \"Ottolinger\", email = \"philipp@ottolinger.de\", role = c(\"aut\", \"cre\"))\nMaintainer: Philipp Ottolinger <philipp@ottolinger.de>\nDescription: This package offers a few functions to query the DB-Open-Data timetable API. It offers functionality to fetch departure and arrival boards as well as fetching more detailed information on specific trains.\nLicense: GPL-3\nLazyData: TRUE\nRoxygenNote: 5.0.1\nImports: dplyr, magrittr, RJSONIO\nDepends: R (>= 2.1.0)\nURL: https://github.com/ottlngr/DBopen\nSuggests: knitr, rmarkdown, ggplot2, ggmap\nVignetteBuilder: knitr\n",
+    "created" : 1462370931922.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "156014787",
+    "id" : "30FD1FAA",
+    "lastKnownWriteTime" : 1462999581,
+    "last_content_update" : 1462999581450,
+    "path" : "~/git/DBopen/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

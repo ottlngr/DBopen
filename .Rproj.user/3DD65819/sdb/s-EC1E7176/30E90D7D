@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Get details on a specific train\n#'\n#' Get additional information on a specific train like the rooute, stops, arrival and departure times.\n#'\n#' @param ref, references URL from \\code{departureBoard(..., refs = TRUE)$departureBoardRef} or \\code{arrivalBoard(..., refs = TRUE)$arrivalBoardRef}.\n#' @author Philipp Ottolinger\n#' @details \\code{journeyDetails()} lets you get further information on a specific train. It requires a reference URL fetched with \\code{departureBoard()} or \\code{arrivalBoard()} and fetches the respective journey details from the API.\n#' @import RJSONIO\n#' @import dplyr\n#' @import magrittr\n#' @export journeyDetails\n#' @examples\n#' \\dontrun{\n#' dep <- departureBoard(stopID = \"008002549\",\n#'                       date = \"2016-12-01\",\n#'                       time = \"08:00\",\n#'                       authKey = authKey,\n#'                       refs = TRUE)\n#' journeyDetails(dep$departureBoardRef$Ref[1])\n#' }\njourneyDetails <- function(ref) {\n  ref_url <- ref\n  journey <- ref_url %>%\n    as.character() %>%\n    fromJSON()\n  journey <- journey$JourneyDetail$Stops$Stop\n  journey <- data.frame(name = journey %>% sapply(\"[\", \"name\") %>% as.character(),\n                        id = journey %>% sapply(\"[\", \"id\") %>% as.character(),\n                        lon = journey %>% sapply(\"[\", \"lon\") %>% as.numeric(),\n                        lat = journey %>% sapply(\"[\", \"lat\") %>% as.numeric(),\n                        routeIdx = journey %>% sapply(\"[\", \"routeIdx\") %>% as.numeric(),\n                        arrTime = journey %>% sapply(\"[\", \"arrTime\") %>% as.character(),\n                        arrDate = journey %>% sapply(\"[\", \"arrDate\") %>% as.character(),\n                        depTime = journey %>% sapply(\"[\", \"depTime\") %>% as.character(),\n                        depDate = journey %>% sapply(\"[\", \"depDate\") %>% as.character(),\n                        track = journey %>% sapply(\"[\", \"track\") %>% as.character(),\n                        stringsAsFactors = F)\n  return(journey)\n}\n",
+    "created" : 1462353573704.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3294592888",
+    "id" : "30E90D7D",
+    "lastKnownWriteTime" : 1462909371,
+    "last_content_update" : 1462909371047,
+    "path" : "~/git/DBopen/R/journeyDetails.R",
+    "project_path" : "R/journeyDetails.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
