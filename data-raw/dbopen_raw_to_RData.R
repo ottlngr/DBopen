@@ -1,6 +1,6 @@
-#' @importFrom jsonlite fromJSON
-#' @importFrom ggplot2 fortify
-#' @importFrom maptools readShapeSpatial
+library(jsonlite)
+library(maptools)
+library(ggplot2)
 
 # Stationsdaten
 # see http://data.deutschebahn.com/dataset/data-stationsdaten/resource/c96fb971-1d03-4798-9a58-f8d269f8ec7a
