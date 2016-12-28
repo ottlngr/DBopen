@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "Package: DBopen\nType: Package\nTitle: Query the DB-Open-Data timetable API\nVersion: 0.1.0\nAuthors@R: person(\"Philipp\", \"Ottolinger\", email = \"philipp@ottolinger.de\", role = c(\"aut\", \"cre\"))\nMaintainer: Philipp Ottolinger <philipp@ottolinger.de>\nDescription: This package offers a few functions to query the DB-Open-Data timetable API. It offers functionality to fetch departure and arrival boards as well as fetching more detailed information on specific trains.\nLicense: GPL-3\nLazyData: TRUE\nRoxygenNote: 5.0.1\nImports: dplyr, magrittr, RJSONIO\nDepends: R (>= 2.1.0)\nURL: https://github.com/ottlngr/DBopen\nSuggests: knitr, rmarkdown, ggplot2, ggmap\nVignetteBuilder: knitr\n",
+    "contents" : "Package: DBopen\nType: Package\nTitle: Access Open Data from Deutsche Bahn\nVersion: 0.2.0\nAuthor: Philipp Ottolinger\nMaintainer: Philipp Ottolinger <philipp@ottolinger.de>\nDescription: More about what it does (maybe more than one line)\n    Use four spaces when indenting paragraphs within the Description.\nLicense: What license is it under?\nEncoding: UTF-8\nLazyData: true\n",
     "created" : 1462370931922.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "156014787",
+    "hash" : "3451879412",
     "id" : "30FD1FAA",
-    "lastKnownWriteTime" : 1462999581,
-    "last_content_update" : 1462999581450,
+    "lastKnownWriteTime" : 1482964088,
+    "last_content_update" : 1482964088578,
     "path" : "~/git/DBopen/DESCRIPTION",
     "project_path" : "DESCRIPTION",
     "properties" : {

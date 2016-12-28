@@ -1,9 +1,9 @@
-Package: dbopen2
+Package: DBopen
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Title: Access Open Data from Deutsche Bahn
+Version: 0.2.0
+Author: Philipp Ottolinger
+Maintainer: Philipp Ottolinger <philipp@ottolinger.de>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
