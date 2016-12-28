@@ -1,4 +1,5 @@
 ~%2FR%2FDBopen.Rmd="A082CE77"
+~%2Fdbopen2%2F.Rbuildignore="98B4F437"
 ~%2Fgit%2FDBopen%2F.Rbuildignore="BE61C623"
 ~%2Fgit%2FDBopen%2F.gitignore="E8BDE249"
 ~%2Fgit%2FDBopen%2FDBopen.Rmd="5BA7883F"
@@ -16,6 +17,7 @@
 ~%2Fgit%2FDBopen%2FR%2Ftimetable_station.R="1DCCF1CD"
 ~%2Fgit%2FDBopen%2FREADME.Rmd="EA1EC4A0"
 ~%2Fgit%2FDBopen%2FREADME.md="1D469873"
+~%2Fgit%2FDBopen%2Fdata-raw%2FauthKey.R="FAF6F0D5"
 ~%2Fgit%2FDBopen%2Fdata-raw%2Fdbopen_raw_to_RData.R="22B5BD45"
 ~%2Fgit%2FDBopen%2Fman%2FdepartureBoard.Rd="3A6B5A29"
 ~%2Fgit%2FDBopen%2Fman%2FgetStopID.Rd="5E4CFC3F"
