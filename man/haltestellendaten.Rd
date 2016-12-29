@@ -19,6 +19,9 @@
 \usage{
 haltestellendaten
 }
+\description{
+List of all stations of the DB Station&Service AG.
+}
 \references{
 \url{http://data.deutschebahn.com/dataset/data-haltestellen}
 }

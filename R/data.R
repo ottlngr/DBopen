@@ -1,5 +1,6 @@
 #' @name haltestellendaten
 #' @title List of all stations of the DB Station&Service AG.
+#' @description List of all stations of the DB Station&Service AG.
 #'
 #' @format A \code{data.frame} with 6598 observations and 6 variables:
 #' \describe{
@@ -17,6 +18,7 @@
 
 #' @name stationsdaten
 #' @title List of all stations with addresses.
+#' @description List of all stations with addresses.
 #'
 #' @format A \code{data.frame} with 5372 observations and 10 variables:
 #' \describe{
@@ -38,6 +40,7 @@
 
 #' @name netzradar
 #' @title The German long-distance traffic railway network with information on mobile communications coverage.
+#' @description The German long-distance traffic railway network with information on mobile communications coverage.
 #'
 #' @format A \code{data.frame} with 119327 observations and 23 variables:
 #' \describe{
@@ -72,6 +75,7 @@
 
 #' @name luftschadstoffkataster
 #' @title Air contaminant cadastre (extract).
+#' @description Air contaminant cadastre (extract).
 #'
 #' @format A \code{data.frame} with 445437 observations and 16 variables:
 #' \describe{
@@ -99,6 +103,7 @@
 
 #' @name sensordaten
 #' @title Shipment container location and sensor data. (extract).
+#' @description Shipment container location and sensor data. (extract).
 #'
 #' @format A \code{data.frame} with 27049 observations and 21 variables:
 #' \describe{

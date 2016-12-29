@@ -1,7 +1,7 @@
 #' @name timetable_reference
 #' @title Get detailed information on a specific train
 #' @description Use a reference URL from either a departure or an arrival board to get more detailed information on a train.
-#' @export timetable_station
+#' @export timetable_reference
 #'
 #' @param reference character string. A reference URL from \code{timetable_arrivals()} or \code{timetable_departures()}.
 #'
@@ -15,7 +15,9 @@
 #'
 #' @examples
 #' \dontrun{
-#' tt <- timetable_arrivals(station = berlin, direction = hamburg, date = "2016-12-31", time = "12:00", authkey = authKey, reference = TRUE)
+#' tt <- timetable_arrivals(station = berlin, direction = hamburg,
+#'                          date = "2016-12-31", time = "12:00",
+#'                          authkey = authKey, reference = TRUE)
 #' timetable_reference(as.character(tt$ref[1]))
 #' }
 

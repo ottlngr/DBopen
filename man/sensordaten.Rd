@@ -34,6 +34,9 @@
 \usage{
 sensordaten
 }
+\description{
+Shipment container location and sensor data. (extract).
+}
 \references{
 \url{http://data.deutschebahn.com/dataset/data-sensordaten-schenker-seefrachtcontainer}
 }

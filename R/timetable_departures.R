@@ -18,21 +18,25 @@
 #'
 #' @author Philipp Ottolinger
 #' @references \url{http://data.deutschebahn.com/dataset/api-fahrplan}
-#' @seealso \code{\link{timetable_station}}, \code{\link{timetable_arrivals}}, \code{\link{timetable_references}}
+#' @seealso \code{\link{timetable_station}}, \code{\link{timetable_arrivals}}, \code{\link{timetable_reference}}
 #'
 #' @importFrom jsonlite fromJSON
 #'
 #' @examples
 #' \dontrun{
 #' berlin <- timetable_station(pattern  = "Berlin Hbf", authkey = authKey)
-#' timetable_departures(station = berlin, date = "2016-12-31", time = "12:00", authkey = authKey)
+#' timetable_departures(station = berlin, date = "2016-12-31", time = "12:00",
+#'                      authkey = authKey)
 #'
 #' # receive reference URLs
-#' timetable_departures(station = berlin, date = "2016-12-31", time = "12:00", reference = TRUE, authkey = authKey)
+#' timetable_departures(station = berlin, date = "2016-12-31", time = "12:00",
+#'                      reference = TRUE, authkey = authKey)
 #'
 #' # use a direction
 #' hamburg <- timetable_station(pattern  = "Hamburg Hbf", authkey = authKey)
-#' timetable_departures(station = berlin, direction = hamburg, date = "2016-12-31", time = "12:00", authkey = authKey)
+#' timetable_departures(station = berlin, direction = hamburg,
+#'                      date = "2016-12-31", time = "12:00",
+#'                      authkey = authKey)
 #' }
 #'
 #'
@@ -59,7 +63,7 @@ timetable_departures <- function(station, direction, date, time, authkey, refere
   api_time <- time
   api_lang <- lang
   api_format <- format
-  api_call <- paste("https://open-api.bahn.de/bin/rest.exe/departureBoard?authKey=", authKey, "&lang=", api_lang, "&id=", api_id, "&date=", api_date, "&time=", api_time, "&format=", api_format, sep = "")
+  api_call <- paste("https://open-api.bahn.de/bin/rest.exe/departureBoard?authKey=", authkey, "&lang=", api_lang, "&id=", api_id, "&date=", api_date, "&time=", api_time, "&format=", api_format, sep = "")
   if (api_direction != FALSE) {
     api_call <- paste(api_call, "&direction=", api_direction, sep = "")
   }

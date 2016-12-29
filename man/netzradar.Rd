@@ -36,6 +36,9 @@
 \usage{
 netzradar
 }
+\description{
+The German long-distance traffic railway network with information on mobile communications coverage.
+}
 \references{
 \url{http://data.deutschebahn.com/dataset/data-netzradar}
 }

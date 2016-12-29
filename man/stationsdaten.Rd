@@ -23,6 +23,9 @@
 \usage{
 stationsdaten
 }
+\description{
+List of all stations with addresses.
+}
 \references{
 \url{http://data.deutschebahn.com/dataset/data-stationsdaten}
 }

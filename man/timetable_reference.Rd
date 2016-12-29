@@ -17,7 +17,9 @@ Use a reference URL from either a departure or an arrival board to get more deta
 }
 \examples{
 \dontrun{
-tt <- timetable_arrivals(station = berlin, direction = hamburg, date = "2016-12-31", time = "12:00", authkey = authKey, reference = TRUE)
+tt <- timetable_arrivals(station = berlin, direction = hamburg,
+                         date = "2016-12-31", time = "12:00",
+                         authkey = authKey, reference = TRUE)
 timetable_reference(as.character(tt$ref[1]))
 }
 }

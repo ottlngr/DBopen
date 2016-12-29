@@ -29,6 +29,9 @@
 \usage{
 luftschadstoffkataster
 }
+\description{
+Air contaminant cadastre (extract).
+}
 \references{
 \url{http://data.deutschebahn.com/dataset/luftschadstoffkataster}
 }

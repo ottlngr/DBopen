@@ -36,14 +36,18 @@ To use this function and to access the DB Timetable-API, you need to have an aut
 \examples{
 \dontrun{
 berlin <- timetable_station(pattern  = "Berlin Hbf", authkey = authKey)
-timetable_arrivals(station = berlin, date = "2016-12-31", time = "12:00", authkey = authKey)
+timetable_arrivals(station = berlin, date = "2016-12-31", time = "12:00",
+                   authkey = authKey)
 
 # receive reference URLs
-timetable_arrivals(station = berlin, date = "2016-12-31", time = "12:00", reference = TRUE, authkey = authKey)
+timetable_arrivals(station = berlin, date = "2016-12-31", time = "12:00",
+                   reference = TRUE, authkey = authKey)
 
 # use a direction
 hamburg <- timetable_station(pattern  = "Hamburg Hbf", authkey = authKey)
-timetable_arrivals(station = berlin, direction = hamburg, date = "2016-12-31", time = "12:00", authkey = authKey)
+timetable_arrivals(station = berlin, direction = hamburg,
+                   date = "2016-12-31", time = "12:00",
+                   authkey = authKey)
 }
 
 
@@ -55,6 +59,6 @@ Philipp Ottolinger
 \url{http://data.deutschebahn.com/dataset/api-fahrplan}
 }
 \seealso{
-\code{\link{timetable_station}}, \code{\link{timetable_departures}}, \code{\link{timetable_references}}
+\code{\link{timetable_station}}, \code{\link{timetable_departures}}, \code{\link{timetable_reference}}
 }
 

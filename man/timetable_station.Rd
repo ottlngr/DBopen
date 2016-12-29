@@ -40,6 +40,6 @@ Philipp Ottolinger
 \url{http://data.deutschebahn.com/dataset/api-fahrplan}
 }
 \seealso{
-\code{\link{timetable_departures}}, \code{\link{timetable_arrivals}}, \code{\link{timetable_references}}
+\code{\link{timetable_departures}}, \code{\link{timetable_arrivals}}, \code{\link{timetable_reference}}
 }
 
