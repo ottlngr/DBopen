@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 ^\./data-raw/authKey\.R$
 ^\.travis\.yml$
+^cran-comments\.md$
