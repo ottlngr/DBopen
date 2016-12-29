@@ -6,14 +6,14 @@
 \title{List of all stations with addresses.}
 \format{A \code{data.frame} with 5372 observations and 10 variables:
 \describe{
-  \item{Bundesland}{The respective federal state.},
+  \item{Bundesland}{The respective federal state.}
   \item{BM}{The respective station management.}
   \item{Bf..Nr.}{Unique station number.}
-  \item{Station}{Name of the station.},
+  \item{Station}{Name of the station.}
   \item{Bf.DS.100.Abk.}{Corresponding railway system.}
-  \item{Kat..Vst}{Station category.},
+  \item{Kat..Vst}{Station category.}
   \item{Straße}{Street, as part of address.}
-  \item{PLZ}{Postcode, as part of address.},
+  \item{PLZ}{Postcode, as part of address.}
   \item{Ort}{City, as part of address.}
   \item{Aufgabenträger}{Constractor.}
 }}
