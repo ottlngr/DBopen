@@ -1,7 +1,7 @@
 #' @name timetable_arrivals
 #' @title Fetch an arrival board for a specific train station
 #' @description Provide a station, date and time to receive an arrival board from the DB Timetable-API. Besides usual information, train specific information is provided, too.
-#' @export timetable_departures
+#' @export timetable_arrivals
 #'
 #' @param station character string. Station specific ID from \code{timetable_station()}.
 #' @param direction character string. Optional. Constrain the arrival board by providing a direction through a station ID from \code{timetable_station()}.

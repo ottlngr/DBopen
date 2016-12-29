@@ -2,12 +2,13 @@ Package: DBopen
 Type: Package
 Title: Access Open Data from Deutsche Bahn
 Version: 0.2.0
+Date: 2016-12-29
 Author: Philipp Ottolinger
 Maintainer: Philipp Ottolinger <philipp@ottolinger.de>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Pre-processed open data from the German railway company Deutsche Bahn. Besides datasets, this package also offers some functions to interact with the open Deutsche Bahn Timetable-API.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
 Imports: jsonlite
+URL: https://github.com/ottlngr/DBopen
