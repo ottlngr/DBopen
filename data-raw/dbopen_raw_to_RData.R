@@ -14,6 +14,7 @@ save(stationsdaten, file = "./data/stationsdaten.RData")
 
 url <- "http://download-data.deutschebahn.com/static/datasets/haltestellen/D_Bahnhof_2016_01_alle.csv"
 haltestellendaten <- read.table(url, sep = ";", header = TRUE, stringsAsFactors = FALSE)
+haltestellendaten <- haltestellendaten[,1:6]
 save(haltestellendaten, file = "./data/haltestellendaten.RData")
 
 # Netzradar

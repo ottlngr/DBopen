@@ -1,7 +1,7 @@
 #' @name haltestellendaten
 #' @title List of all stations of the DB Station&Service AG.
 #'
-#' @format A \code{data.frame} with 6598 observations and 8 variables:
+#' @format A \code{data.frame} with 6598 observations and 6 variables:
 #' \describe{
 #'   \item{EVA_NR}{Internal station ID.}
 #'   \item{DS100}{Corresponding railway system.}
@@ -9,8 +9,6 @@
 #'   \item{VERKEHR}{Type of traffic: "FV" = also long-distance traffic, "RV" = regional traffic only, "nur DPN" = private regional traffic only.}
 #'   \item{LAENGE}{The station's longitude (WGS84).}
 #'   \item{BREITE}{The station's latitude (WGS84).}
-#'   \item{X}{}
-#'   \item{X.1}{}
 #' }
 #'
 #' @references \url{http://data.deutschebahn.com/dataset/data-haltestellen}
