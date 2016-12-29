@@ -3,7 +3,7 @@
 \docType{data}
 \name{luftschadstoffkataster}
 \alias{luftschadstoffkataster}
-\title{Air contaminant cadastre.}
+\title{Air contaminant cadastre (extract).}
 \format{A \code{data.frame} with 445437 observations and 16 variables:
 \describe{
   \item{id}{Section id.}
